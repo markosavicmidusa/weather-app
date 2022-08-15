@@ -7,6 +7,10 @@ const hbs = require('hbs');
 const app = express();
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
+//setting up the port
+
+const port = process.env.PORT || 3000
+
 
 
 // Setting up a path
@@ -127,10 +131,6 @@ app.get('*', (req, res) =>{
 });
 
 
-
-
-
-
 // Weather route
 /*
 app.get('/weather',(req, res)=>{
@@ -144,8 +144,8 @@ app.get('/weather',(req, res)=>{
 */
 
 
-app.listen(3001, ()=>{
-    console.log('app is listening on the port 3001');
+app.listen(port, ()=>{
+    console.log('app is listening on the port ' + port);
 });
 
 
@@ -294,6 +294,42 @@ app.listen(3000, ()=>{
 });
 
 
+ */
+
+
+/**
+ * Adding the public and private key
+ * 
+ * ls -a -l ~/.ssh  -> Lists all files include hidden-once from folder folder 
+ *  
+ * ssh-keygen -t rsa -b 4096 -C "savic.marko90@gmail.com"  -> it will generate our keys in .ssh folder
+ * 
+ * eval "$(ssh-agent -s)" -> starting ssh agent
+ * 
+ * ssh-add -K ~/.ssh/id_rsa -> addes the private key into our agent
+ * 
+ *  ssh -T git@github.com -> testing the authentification -> yes
+ *  
+ * 
+ * HEROKU DEPLOYMENT
+ * 
+ * heroku keys:add  
+ * 
+ * heroku create marko-weather-app -> Creating the app with name on heroku
+ * 
+ * https://marko-weather-app.herokuapp.com/ | https://git.heroku.com/marko-weather-app.git
+ * 
+ * we need to add code
+ * 
+ * adding start in package.json
+ * 
+ * changing app.listen(3000,()=>....) on port
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
  */
 
 

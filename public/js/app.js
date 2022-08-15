@@ -15,7 +15,7 @@ const fetchFunction = (searchTerm) =>
     message2.textContent = '';
     message3.textContent = '';
 
-fetch(`http://localhost:3001/weather?address=${searchTerm}`).then(response => {
+fetch(`/weather?address=${searchTerm}`).then(response => {
 
     if(!response){
         console.log('Error: No data being provided')
