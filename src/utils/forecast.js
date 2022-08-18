@@ -15,12 +15,16 @@ const forecast = (latitude, longitude, callback ) => {
             callback(body.error.info, undefined);
         }
         else{
-
+            console.log(body);
             callback(undefined, {
+                
                 temperature: body.current.temperature,
                 precip: body.current.precip,
-                weather_description: body.current.weather_descriptions[0]
-
+                weather_description: body.current.weather_descriptions[0],
+                wind_speed:  body.current.wind_speed,
+                humidity: body.current.humidity,
+                uv_index: body.current.uv_index,
+                visibility: body.current.visibility
             });
         }
 

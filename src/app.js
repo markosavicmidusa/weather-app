@@ -66,8 +66,8 @@ app.get('/weather', (req, res)=>{
                 });
            }else{
         
-                forecast(latitude, longitude, (error, {temperature, precip, weather_description}={}) =>{
-                
+                forecast(latitude, longitude, (error, {temperature, precip, weather_description, wind_speed, humidity, uv_index, visibility }={}) =>{
+                    
                     if(error){
                         console.log("Error" + error);
                         return res.send({
@@ -76,7 +76,7 @@ app.get('/weather', (req, res)=>{
                     }else{
                         
                         return res.send({
-                            forecast: `It is currently ${temperature} degrees out.There is a ${precip} % chance of rain. It\'s ${weather_description}`,
+                            forecast: `It is currently ${temperature} degrees out.There is a ${precip} % chance of rain. It\'s ${weather_description}.Wind speed is ${wind_speed}. Humidity is: ${humidity}. UV index is: ${uv_index}`,
                             location: label, 
                             address: req.query.address
                         });
