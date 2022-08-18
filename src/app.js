@@ -7,8 +7,9 @@ const hbs = require('hbs');
 const app = express();
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
-//setting up the port
 
+
+//setting up the port
 const port = process.env.PORT || 3000
 
 
