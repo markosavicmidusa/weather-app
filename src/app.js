@@ -10,7 +10,7 @@ const forecast = require('./utils/forecast');
 
 
 //setting up the port
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 
 
@@ -325,6 +325,8 @@ app.listen(3000, ()=>{
  * adding start in package.json
  * 
  * changing app.listen(3000,()=>....) on port
+ * 
+ * git push heroku main
  * 
  * 
  * 
